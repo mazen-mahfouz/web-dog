@@ -1,0 +1,65 @@
+#insta {
+    padding-bottom: 35px;
+    h1 {
+        font-size: clamp(28px, 8vw, 35px);
+        z-index: 9999;
+        text-align: center;
+    }
+    #slider-insta {
+        @include main_div_slider(330px);
+        margin-top: 15px;
+        #left {
+            @include slider-button(left);
+            display: none;
+            z-index: 9999999;
+        }
+        #right {
+            @include slider-button(right);
+            z-index: 9999999;
+        }
+        #left:hover,
+        #right:hover {
+            opacity: 1;
+        }
+        #all-img-slider-insta {
+            @include all-img-slider(calc(380px * 14), 360px);
+            .conn-img {
+                position: relative;
+                overflow: hidden;
+                i {
+                    @include pos-center(absolute);
+                    font-size: 50px;
+                    color: #efefef;
+                    z-index: 9999;
+                    opacity: .5;
+                    // padding: 125px 168px;
+                    &:hover {
+                        padding: 40px;
+                        color: #f82d4f;
+                        opacity: 1;
+                        transition: .8s;
+                        background-color: #f82d4f21;
+                        box-shadow: 0px 0px 50px 167px #f82d4f3b;
+                    }
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    #overlay {
+        @include overlay(rgba(0, 0, 0, 0.274));
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #insta #slider-insta {
+        #all-img-slider-insta {
+            width: 1400%;
+            grid-template-columns: repeat(14, calc(100% / 14));
+            gap: 0;
+        }
+    }
+}

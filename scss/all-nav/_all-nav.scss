@@ -1,0 +1,14 @@
+#all-nav {
+    @extend %flex;
+    width: 100%;
+    padding: 80px 0 0 0;
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 920px) {
+    #all-nav {
+        padding: 42px 0 0 0;
+    }
+}

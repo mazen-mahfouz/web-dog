@@ -1,0 +1,17 @@
+#aicon-brand {
+    width: 100%;
+    padding: 100px 0 15px 0;
+    text-align: center;
+    img {
+        margin: 20px 5% 50px 5%;
+        width: 200px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #aicon-brand {
+        img {
+            margin: 20px 8% 50px 8%;
+        }
+    }
+}

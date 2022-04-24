@@ -1,0 +1,43 @@
+#slider {
+    @include main_div_slider(250px);
+    #left {
+        @include slider-button(left);
+        display: none;
+    }
+    #right {
+        @include slider-button(right);
+    }
+    #left:hover,
+    #right:hover {
+        opacity: 1;
+    }
+    #all-img-slider {
+        @include all-img-slider(calc(420px * 8), 400px);
+        .conn-img {
+            position: relative;
+            h1 {
+                @include pos-center(absolute);
+                font-size: clamp(19px, 7vw, 28px);
+                z-index: 9999;
+                text-align: center;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    #overlay {
+        @include overlay(rgba(0, 0, 0, 0.274));
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #slider {
+        #all-img-slider {
+            width: 800%;
+            grid-template-columns: repeat(8, calc(100% / 8));
+            gap: 0;
+        }
+    }
+}
